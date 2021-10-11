@@ -123,7 +123,7 @@
 </template>
 
 <script>
-// import db from "../firebase/firebaseInit";
+import db from "../firebase/firebaseInit";
 import Loading from "../components/Loading";
 import { mapActions, mapMutations, mapState } from "vuex";
 import { uid } from "uid";
@@ -235,31 +235,31 @@ export default {
       }
       this.loading = true;
       this.calInvoiceTotal();
-      // const dataBase = db.collection("invoices").doc();
-      // await dataBase.set({
-      //   invoiceId: uid(6),
-      //   billerStreetAddress: this.billerStreetAddress,
-      //   billerCity: this.billerCity,
-      //   billerZipCode: this.billerZipCode,
-      //   billerCountry: this.billerCountry,
-      //   clientName: this.clientName,
-      //   clientEmail: this.clientEmail,
-      //   clientStreetAddress: this.clientStreetAddress,
-      //   clientCity: this.clientCity,
-      //   clientZipCode: this.clientZipCode,
-      //   clientCountry: this.clientCountry,
-      //   invoiceDate: this.invoiceDate,
-      //   invoiceDateUnix: this.invoiceDateUnix,
-      //   paymentTerms: this.paymentTerms,
-      //   paymentDueDate: this.paymentDueDate,
-      //   paymentDueDateUnix: this.paymentDueDateUnix,
-      //   productDescription: this.productDescription,
-      //   invoiceItemList: this.invoiceItemList,
-      //   invoiceTotal: this.invoiceTotal,
-      //   invoicePending: this.invoicePending,
-      //   invoiceDraft: this.invoiceDraft,
-      //   invoicePaid: null,
-      // });
+      const dataBase = db.collection("invoices").doc();
+      await dataBase.set({
+        invoiceId: uid(6),
+        billerStreetAddress: this.billerStreetAddress,
+        billerCity: this.billerCity,
+        billerZipCode: this.billerZipCode,
+        billerCountry: this.billerCountry,
+        clientName: this.clientName,
+        clientEmail: this.clientEmail,
+        clientStreetAddress: this.clientStreetAddress,
+        clientCity: this.clientCity,
+        clientZipCode: this.clientZipCode,
+        clientCountry: this.clientCountry,
+        invoiceDate: this.invoiceDate,
+        invoiceDateUnix: this.invoiceDateUnix,
+        paymentTerms: this.paymentTerms,
+        paymentDueDate: this.paymentDueDate,
+        paymentDueDateUnix: this.paymentDueDateUnix,
+        productDescription: this.productDescription,
+        invoiceItemList: this.invoiceItemList,
+        invoiceTotal: this.invoiceTotal,
+        invoicePending: this.invoicePending,
+        invoiceDraft: this.invoiceDraft,
+        invoicePaid: null,
+      });
       this.loading = false;
       this.TOGGLE_INVOICE();
       this.GET_INVOICES();
@@ -271,25 +271,25 @@ export default {
       }
       this.loading = true;
       this.calInvoiceTotal();
-      // const dataBase = db.collection("invoices").doc(this.docId);
-      // await dataBase.update({
-      //   billerStreetAddress: this.billerStreetAddress,
-      //   billerCity: this.billerCity,
-      //   billerZipCode: this.billerZipCode,
-      //   billerCountry: this.billerCountry,
-      //   clientName: this.clientName,
-      //   clientEmail: this.clientEmail,
-      //   clientStreetAddress: this.clientStreetAddress,
-      //   clientCity: this.clientCity,
-      //   clientZipCode: this.clientZipCode,
-      //   clientCountry: this.clientCountry,
-      //   paymentTerms: this.paymentTerms,
-      //   paymentDueDate: this.paymentDueDate,
-      //   paymentDueDateUnix: this.paymentDueDateUnix,
-      //   productDescription: this.productDescription,
-      //   invoiceItemList: this.invoiceItemList,
-      //   invoiceTotal: this.invoiceTotal,
-      // });
+      const dataBase = db.collection("invoices").doc(this.docId);
+      await dataBase.update({
+        billerStreetAddress: this.billerStreetAddress,
+        billerCity: this.billerCity,
+        billerZipCode: this.billerZipCode,
+        billerCountry: this.billerCountry,
+        clientName: this.clientName,
+        clientEmail: this.clientEmail,
+        clientStreetAddress: this.clientStreetAddress,
+        clientCity: this.clientCity,
+        clientZipCode: this.clientZipCode,
+        clientCountry: this.clientCountry,
+        paymentTerms: this.paymentTerms,
+        paymentDueDate: this.paymentDueDate,
+        paymentDueDateUnix: this.paymentDueDateUnix,
+        productDescription: this.productDescription,
+        invoiceItemList: this.invoiceItemList,
+        invoiceTotal: this.invoiceTotal,
+      });
       this.loading = false;
       const data = {
         docId: this.docId,
@@ -350,7 +350,7 @@ export default {
       color: #777f98;
     }
     h4 {
-      color: #05c299;
+      color: #7c5dfa;
       font-size: 12px;
       margin-bottom: 24px;
     }
